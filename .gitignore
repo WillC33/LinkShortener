@@ -1,0 +1,13 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+/appsettings.json
+/appsettings.Development.json
+/.idea/.idea.LinkShortener/.idea/encodings.xml
+/.idea/.idea.LinkShortener/.idea/.gitignore
+/.idea/.idea.LinkShortener/.idea/indexLayout.xml
+/.idea/.idea.LinkShortener/.idea/vcs.xml
+/.idea/.idea.LinkShortener/.idea/dataSources.xml
+/linkShortener.sqlite
