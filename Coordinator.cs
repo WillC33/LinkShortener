@@ -32,6 +32,6 @@ internal class Coordinator(ShortenerService shortener, Repository repository)
     internal string ReadLink(string hash)
     {
         var model = repository.ReadLink(hash);
-        return model.originalLink;
+        return model?.originalLink;
     }
 }
