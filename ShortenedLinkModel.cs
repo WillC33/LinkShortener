@@ -5,6 +5,6 @@ namespace LinkShortener;
 /// </summary>
 internal record ShortenedLinkModel()
 {
-    internal string hash { get; set; }
-    internal string originalLink { get; set; }
+    internal string Hash { get; set; }
+    internal string OriginalLink { get; set; }
 }

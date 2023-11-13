@@ -22,8 +22,8 @@ internal class Repository
             using var command = new SqliteCommand(
                 "INSERT INTO ShortenedLinks (Hash, OriginalLink) VALUES (@Hash, @OriginalLink);", connection);
             
-            command.Parameters.AddWithValue("@Hash", link.hash);
-            command.Parameters.AddWithValue("@OriginalLink", link.originalLink);
+            command.Parameters.Add(new SqliteParameter("@Hash", SqliteType.Text) { Value = link.Hash });
+            command.Parameters.Add(new SqliteParameter("@OriginalLink", SqliteType.Text) { Value = link.OriginalLink });
             
             command.ExecuteNonQuery();
             Console.WriteLine("Link inserted successfully.");
@@ -56,8 +56,8 @@ internal class Repository
             
             return new ShortenedLinkModel
             { 
-                hash = reader["Hash"].ToString(), 
-                originalLink = reader["OriginalLink"].ToString()
+                Hash = reader["Hash"].ToString(), 
+                OriginalLink = reader["OriginalLink"].ToString()
             };
         }
         catch (Exception ex)
