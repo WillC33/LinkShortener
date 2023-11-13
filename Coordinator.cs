@@ -12,6 +12,8 @@ internal class Coordinator(ShortenerService shortener, Repository repository)
     /// <returns>the hashed linked</returns>
     internal string WriteLink(string link)
     {
+        if (String.IsNullOrWhiteSpace(link)) return link;
+        
         var hash = shortener.ShortenLink(link);
         
         ShortenedLinkModel model = new()

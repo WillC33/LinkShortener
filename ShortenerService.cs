@@ -19,12 +19,13 @@ internal class ShortenerService
 
         //convert to hexadecimal string
         StringBuilder stringBuilder = new();
-        foreach (byte b in hashBytes)
+        
+        //should be sufficient to avoid collisions at this scale
+        for (int i = 0; i < 8; i++)
         {
-            stringBuilder.Append(b.ToString("x2"));
+            stringBuilder.Append(hashBytes[i].ToString("x2"));
         }
 
-        //shortens to 8 chars, which should avoid collisions at this scale
-        return stringBuilder.ToString()[..8];
+        return stringBuilder.ToString();
     }
 }
