@@ -2,6 +2,9 @@
 
 Link shortener is a minimal API and SQLite microservice for shortening urls in the style of Bitly.
 
+## TODO
+The project is a precursor to my (in-progress) ShortLynx project which will incorporate an improved database in the form of Cosmos and a Blazor page for interacting with the logic (as well as the open API endpoints)
+
 ## Features
 
 - **Minimal API:** A simple API, making use of current design patterns
