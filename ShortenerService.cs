@@ -15,7 +15,6 @@ internal class ShortenerService
     /// <returns>the hash</returns>
     internal string ShortenLink(string link)
     {
-        //TODO: this doesn't really shorten the links so the logic works but this method is not right
         byte[] hashBytes = SHA256.HashData(Encoding.UTF8.GetBytes(link));
 
         //convert to hexadecimal string
@@ -25,6 +24,7 @@ internal class ShortenerService
             stringBuilder.Append(b.ToString("x2"));
         }
 
-        return stringBuilder.ToString();
+        //shortens to 8 chars, which should avoid collisions at this scale
+        return stringBuilder.ToString()[..8];
     }
 }
